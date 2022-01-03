@@ -6,7 +6,6 @@ exports.all = (req, res) => {
     .then(categories => res.status(200).json(categories))
     .catch(err => res.status(400).json({error: err.message}));
 };
-
 // get a course by id
 exports.get = (req, res, next) => {
     Category.findOne({ _id: req.params.id })
