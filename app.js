@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser')
 
 const transactionRouter = require('./routes/transactions');
+const categoryRouter = require('./routes/categories');
 //const userRouter = require('./routes/users');
 
 const app = express();
@@ -30,6 +31,7 @@ mongoose.connect('mongodb://localhost:27017/money-manager',
 });
 
 app.use('/api/transaction',transactionRouter);
+app.use('/api/category',categoryRouter);
 
 
 module.exports = app;
